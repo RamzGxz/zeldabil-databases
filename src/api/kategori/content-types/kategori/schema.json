@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kategoris",
+  "info": {
+    "singularName": "kategori",
+    "pluralName": "kategoris",
+    "displayName": "kategori",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "kategoriId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "nama": {
+      "type": "string"
+    },
+    "produk": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produk.produk",
+      "mappedBy": "kategori"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tokos",
+  "info": {
+    "singularName": "toko",
+    "pluralName": "tokos",
+    "displayName": "toko",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tokoId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "namaToko": {
+      "type": "string"
+    },
+    "namaOwner": {
+      "type": "string"
+    },
+    "alamat": {
+      "type": "string"
+    },
+    "totalPenjualan": {
+      "type": "integer"
+    },
+    "produk": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produk.produk",
+      "mappedBy": "toko"
+    }
+  }
+}
