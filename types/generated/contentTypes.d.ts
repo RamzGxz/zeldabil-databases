@@ -686,10 +686,9 @@ export interface ApiKategoriKategori extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    kategoriId: Attribute.String & Attribute.Required & Attribute.Unique;
     nama: Attribute.String;
     produk: Attribute.Relation<
       'api::kategori.kategori',
@@ -698,7 +697,6 @@ export interface ApiKategoriKategori extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::kategori.kategori',
       'oneToOne',
@@ -723,10 +721,9 @@ export interface ApiProdukProduk extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    produkId: Attribute.String & Attribute.Required & Attribute.Unique;
     nama: Attribute.String;
     deskripsi: Attribute.RichText;
     harga: Attribute.Integer;
@@ -746,9 +743,12 @@ export interface ApiProdukProduk extends Schema.CollectionType {
       'manyToOne',
       'api::toko.toko'
     >;
+    foto: Attribute.Media;
+    promo: Attribute.Boolean;
+    promoPercentage: Attribute.Integer;
+    berat: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::produk.produk',
       'oneToOne',
@@ -773,11 +773,10 @@ export interface ApiTokoToko extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    tokoId: Attribute.String & Attribute.Required & Attribute.Unique;
-    namaToko: Attribute.String;
+    nama: Attribute.String;
     namaOwner: Attribute.String;
     alamat: Attribute.String;
     totalPenjualan: Attribute.Integer;
@@ -788,7 +787,6 @@ export interface ApiTokoToko extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::toko.toko', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::toko.toko', 'oneToOne', 'admin::user'> &

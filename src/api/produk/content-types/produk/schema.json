@@ -8,15 +8,10 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "produkId": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "nama": {
       "type": "string"
     },
@@ -55,6 +50,26 @@
       "relation": "manyToOne",
       "target": "api::toko.toko",
       "inversedBy": "produk"
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "promo": {
+      "type": "boolean"
+    },
+    "promoPercentage": {
+      "type": "integer"
+    },
+    "berat": {
+      "type": "integer"
     }
   }
 }

@@ -8,16 +8,11 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "tokoId": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
-    "namaToko": {
+    "nama": {
       "type": "string"
     },
     "namaOwner": {

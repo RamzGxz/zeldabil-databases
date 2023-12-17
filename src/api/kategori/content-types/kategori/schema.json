@@ -8,15 +8,10 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "kategoriId": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "nama": {
       "type": "string"
     },
